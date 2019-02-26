@@ -1,0 +1,32 @@
+{
+  "name": "vuepress-plugin-redirect",
+  "version": "1.0.0",
+  "main": "src/lib",
+  "description": "A VuePress plugin which handles redirection.",
+  "author": "Shigma <1700011071@pku.edu.cn>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vuepress dev src/docs",
+    "build": "vuepress build src/docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Shigma/vuepress-plugin-redirect.git"
+  },
+  "devDependencies": {
+    "@shigma/vuepress-utils": "^1.0.0",
+    "@vuepress/plugin-back-to-top": "^1.0.0-alpha.39",
+    "@vuepress/plugin-medium-zoom": "^1.0.0-alpha.39",
+    "vuepress": "^1.0.0-alpha.39"
+  },
+  "keywords": [
+    "vuepress",
+    "vuepress-plugin",
+    "redirect",
+    "router",
+    "i18n"
+  ],
+  "dependencies": {
+    "stringify-object": "^3.3.0"
+  }
+}
