@@ -41,7 +41,7 @@ export default ({ router, siteData }) => {
 
   // resolve redirectors
   redirectors.forEach((redirector) => {
-    const { base = '/', storage, alternative } = redirector
+    const { base = '/', storage } = redirector
     redirector.base = base
 
     // resolve storage
@@ -74,7 +74,8 @@ export default ({ router, siteData }) => {
     let target
 
     for (const redirector of redirectors) {
-      const { base, alternative, storage } = redirector
+      const { base, storage } = redirector
+      let { alternative } = redirector
       if (!to.path.startsWith(base)) continue
       
       // get rest of the path

@@ -1,23 +1,25 @@
 {
   "name": "vuepress-plugin-redirect",
-  "version": "1.0.0",
-  "main": "src/lib",
-  "description": "A VuePress plugin which handles redirection.",
+  "version": "1.0.1",
+  "main": "src/index.js",
+  "description": "A VuePress plugin that handles redirection.",
   "author": "Shigma <1700011071@pku.edu.cn>",
   "license": "MIT",
   "scripts": {
-    "dev": "vuepress dev src/docs",
-    "build": "vuepress build src/docs"
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs",
+    "serve": "vuepress serve docs"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/Shigma/vuepress-plugin-redirect.git"
   },
   "devDependencies": {
-    "@shigma/vuepress-utils": "^1.0.0",
-    "@vuepress/plugin-back-to-top": "^1.0.0-alpha.39",
-    "@vuepress/plugin-medium-zoom": "^1.0.0-alpha.39",
-    "vuepress": "^1.0.0-alpha.39"
+    "@vuepress/plugin-back-to-top": "^1.0.0-alpha.44",
+    "@vuepress/plugin-medium-zoom": "^1.0.0-alpha.44",
+    "vuepress": "^1.0.0-alpha.44",
+    "vuepress-plugin-redirect": "^1.0.1",
+    "vuepress-plugin-serve": "^1.0.1"
   },
   "keywords": [
     "vuepress",
@@ -27,6 +29,6 @@
     "i18n"
   ],
   "dependencies": {
-    "stringify-object": "^3.3.0"
+    "@shigma/stringify-object": "^3.3.0"
   }
 }

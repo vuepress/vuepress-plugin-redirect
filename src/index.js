@@ -2,6 +2,9 @@ const { resolve } = require('path')
 const stringify = require('stringify-object')
 
 module.exports = (options, context) => ({
+  // workaround SSR mismatch in 404.html
+  plugins: [require('./404-without-ssr')],
+
   async clientDynamicModules () {
     return {
       name: 'redirect-options.js',
@@ -9,7 +12,5 @@ module.exports = (options, context) => ({
     }
   },
 
-  enhanceAppFiles: [
-    resolve(__dirname, 'enhanceApp.js')
-  ],
+  enhanceAppFiles: resolve(__dirname, 'enhanceApp.js'),
 })
