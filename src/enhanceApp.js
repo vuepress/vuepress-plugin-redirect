@@ -83,7 +83,7 @@ export default ({ router, siteData }) => {
       const rest = to.path.slice(base.length) || '/'
 
       if (storage) {
-        const alt = storage.get()
+        const alt = storage.get(redirector)
         if (alt) {
           const path = join(base, alt, rest)
           if (isRouteExists(path)) {
@@ -125,7 +125,7 @@ export default ({ router, siteData }) => {
       if (!storage || !to.path.startsWith(base)) continue
       const alt = to.path.slice(base.length).split('/')[0]
       if (alt) {
-        storage.set(alt)
+        storage.set(alt, redirector)
       }
     }
   })

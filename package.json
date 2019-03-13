@@ -29,6 +29,7 @@
     "i18n"
   ],
   "dependencies": {
-    "@shigma/stringify-object": "^3.3.0"
+    "@shigma/stringify-object": "^3.3.0",
+    "vuepress-plugin-ssr-mismatch-workaround": "^1.0.0"
   }
 }

@@ -1,9 +1,9 @@
 const { resolve } = require('path')
-const stringify = require('stringify-object')
+const stringify = require('@shigma/stringify-object')
 
 module.exports = (options, context) => ({
   // workaround SSR mismatch in 404.html
-  plugins: [require('./404-without-ssr')],
+  plugins: ['ssr-mismatch-workaround'],
 
   async clientDynamicModules () {
     return {
