@@ -3,7 +3,7 @@ const stringify = require('@shigma/stringify-object')
 
 module.exports = (options, context) => ({
   // workaround SSR mismatch in 404.html
-  plugins: ['ssr-mismatch-workaround'],
+  plugins: ['dehydrate'],
 
   async clientDynamicModules () {
     return {

@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-redirect",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "main": "src/index.js",
   "description": "A VuePress plugin that handles redirection.",
   "author": "Shigma <1700011071@pku.edu.cn>",
@@ -30,6 +30,6 @@
   ],
   "dependencies": {
     "@shigma/stringify-object": "^3.3.0",
-    "vuepress-plugin-ssr-mismatch-workaround": "^1.0.0"
+    "vuepress-plugin-dehydrate": "^1.0.0"
   }
 }
