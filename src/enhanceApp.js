@@ -5,8 +5,20 @@ export default ({ router, siteData }) => {
   const { routes } = router.options
   const { redirectors = [] } = options
 
-  function isRouteExists (path) {
+  function hasRoute (path) {
     return routes.filter(route => route.path.toLowerCase() === path.toLowerCase()).length
+  }
+
+  function getFallbackRoute (path) {
+    if (hasRoute(path)) return path
+    if (!/\/$/.test(path)) {
+      const endingSlashUrl = path + '/'
+      if (hasRoute(endingSlashUrl)) return endingSlashUrl
+    }
+    if (!/\.html$/.test(path)) {
+      const endingHtmlUrl = path.replace(/\/$/, '') + '.html'
+      if (hasRoute(endingHtmlUrl)) return endingHtmlUrl
+    }
   }
 
   // default redirectors
@@ -69,7 +81,8 @@ export default ({ router, siteData }) => {
 
   router.beforeEach((to, from, next) => {
     // if router exists, skip redirection
-    if (isRouteExists(to.path)) return next()
+    const fallback = getFallbackRoute(to.path)
+    if (fallback) return next()
 
     let target
 
@@ -85,8 +98,8 @@ export default ({ router, siteData }) => {
       if (storage) {
         const alt = storage.get(redirector)
         if (alt) {
-          const path = join(base, alt, rest)
-          if (isRouteExists(path)) {
+          const path = getFallbackRoute(join(base, alt, rest))
+          if (path) {
             target = path
             break
           }
@@ -103,8 +116,8 @@ export default ({ router, siteData }) => {
       }
 
       for (const alt of alternative) {
-        const path = join(base, alt, rest)
-        if (isRouteExists(path)) {
+        const path = getFallbackRoute(join(base, alt, rest))
+        if (path) {
           target = path
           break
         }
@@ -118,7 +131,7 @@ export default ({ router, siteData }) => {
 
   router.afterEach((to) => {
     // if router doesn't exist, skip storage
-    if (!isRouteExists(to.path)) return
+    if (!hasRoute(to.path)) return
 
     for (const redirector of redirectors) {
       const { base, storage } = redirector

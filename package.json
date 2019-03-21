@@ -1,25 +1,21 @@
 {
   "name": "vuepress-plugin-redirect",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "main": "src/index.js",
   "description": "A VuePress plugin that handles redirection.",
   "author": "Shigma <1700011071@pku.edu.cn>",
   "license": "MIT",
   "scripts": {
-    "dev": "vuepress dev docs",
-    "build": "vuepress build docs",
-    "serve": "vuepress serve docs"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Shigma/vuepress-plugin-redirect.git"
+    "url": "https://github.com/vuepress/vuepress-plugin-redirect.git"
   },
+  "bugs": {
+    "url": "https://github.com/vuepress/vuepress-plugin-redirect/issues"
+  },
+  "homepage": "https://vuepress.github.io/plugins/redirect/",
   "devDependencies": {
-    "@vuepress/plugin-back-to-top": "^1.0.0-alpha.44",
-    "@vuepress/plugin-medium-zoom": "^1.0.0-alpha.44",
-    "vuepress": "^1.0.0-alpha.44",
-    "vuepress-plugin-redirect": "^1.0.1",
-    "vuepress-plugin-serve": "^1.0.1"
   },
   "keywords": [
     "vuepress",
