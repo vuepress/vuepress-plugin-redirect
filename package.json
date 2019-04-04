@@ -1,12 +1,16 @@
 {
   "name": "vuepress-plugin-redirect",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "main": "src/index.js",
   "description": "A VuePress plugin that handles redirection.",
   "author": "Shigma <1700011071@pku.edu.cn>",
   "license": "MIT",
   "scripts": {
+    "lint": "eslint . --fix"
   },
+  "files": [
+    "src"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/vuepress/vuepress-plugin-redirect.git"
@@ -16,6 +20,13 @@
   },
   "homepage": "https://vuepress.github.io/plugins/redirect/",
   "devDependencies": {
+    "eslint": "^5.15.1",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^8.0.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "eslint-plugin-vue": "^5.2.2"
   },
   "keywords": [
     "vuepress",

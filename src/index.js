@@ -2,6 +2,8 @@ const { resolve } = require('path')
 const stringify = require('@shigma/stringify-object')
 
 module.exports = (options, context) => ({
+  name: 'vuepress-plugin-redirect',
+
   // workaround SSR mismatch in 404.html
   plugins: ['dehydrate'],
 

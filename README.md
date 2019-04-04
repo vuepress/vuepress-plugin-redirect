@@ -1,6 +1,5 @@
-# [vuepress-plugin-redirect](https://shigma.github.io/vuepress-plugin-redirect/)
+# [vuepress-plugin-redirect](https://vuepress.github.io/plugins/redirect/)
 
-[![Build Status](https://travis-ci.org/Shigma/vuepress-plugin-redirect.svg?branch=master)](https://travis-ci.org/Shigma/vuepress-plugin-redirect)
 [![npm](https://img.shields.io/npm/v/vuepress-plugin-redirect.svg)](https://www.npmjs.com/package/vuepress-plugin-redirect)
 
 A [VuePress](https://vuepress.vuejs.org/) plugin that handles redirection.
