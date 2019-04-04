@@ -3,21 +3,46 @@ import { join } from 'path'
 
 export default ({ router, siteData }) => {
   const { routes } = router.options
-  const { redirectors = [] } = options
+  const { redirectors = [], alias = {}, autoSuffix = true } = options
 
   function hasRoute (path) {
     return routes.filter(route => route.path.toLowerCase() === path.toLowerCase()).length
   }
 
+  function* getPossibleRoutes (path) {
+    if (!path.startsWith('/')) {
+      path = '/' + path
+    }
+    yield path
+    if (!autoSuffix) return
+    if (path.endsWith('*')) return
+    if (!/\/$/.test(path)) {
+      yield path.replace(/\.html$/, '') + '/'
+    }
+    if (!/\.html$/.test(path)) {
+      yield path.replace(/\/$/, '') + '.html'
+    }
+  }
+
   function getFallbackRoute (path) {
     if (hasRoute(path)) return path
+    if (!autoSuffix) return
     if (!/\/$/.test(path)) {
-      const endingSlashUrl = path + '/'
+      const endingSlashUrl = path.replace(/\.html$/, '') + '/'
       if (hasRoute(endingSlashUrl)) return endingSlashUrl
     }
     if (!/\.html$/.test(path)) {
       const endingHtmlUrl = path.replace(/\/$/, '') + '.html'
       if (hasRoute(endingHtmlUrl)) return endingHtmlUrl
+    }
+  }
+
+  for (const key in alias) {
+    for (const path of getPossibleRoutes(key)) {
+      router.addRoutes([{
+        path,
+        redirect: alias[key],
+      }])
     }
   }
 
