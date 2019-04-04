@@ -12,8 +12,8 @@ VuePress has a built-in [i18n system](https://v1.vuepress.vuejs.org/en/guide/i18
 
 ### autoSuffix
 
-- **类型:** `boolean`
-- **默认值:** `true`
+- **type:** `boolean`
+- **default:** `true`
 
 Automatically complete the suffix of the redirect. For example, if set to `true`, an `alias` like this:
 
