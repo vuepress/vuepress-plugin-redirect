@@ -1,5 +1,7 @@
 # [vuepress-plugin-redirect](https://vuepress.github.io/plugins/redirect/)
 
+> Migrated to [vuepress-community](https://github.com/vuepress/vuepress-community)
+
 [![npm](https://img.shields.io/npm/v/vuepress-plugin-redirect.svg)](https://www.npmjs.com/package/vuepress-plugin-redirect)
 
 A [VuePress](https://vuepress.vuejs.org/) plugin that handles redirection.
